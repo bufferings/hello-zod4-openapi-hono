@@ -75,8 +75,9 @@ Both approaches result in the same OpenAPI document.
 - Runtime: [Node.js](https://nodejs.org/) v22
 - Package Manager: [pnpm](https://pnpm.io/)
 - Framework: [Hono](https://hono.dev/)
+- CLI: [Hono CLI](https://github.com/honojs/cli)
 - Validation: [Zod](https://zod.dev/) v4
-- OpenAPI: [@hono/zod-openapi](https://github.com/honojs/middleware/tree/main/packages/zod-openapi)
+- Zod OpenAPI Hono: [@hono/zod-openapi](https://github.com/honojs/middleware/tree/main/packages/zod-openapi)
 - Result Type: [@praha/byethrow](https://github.com/praha-inc/byethrow)
 - Formatter/Linter: [Biome](https://biomejs.dev/)
 - Git Hooks: [Lefthook](https://github.com/evilmartians/lefthook)

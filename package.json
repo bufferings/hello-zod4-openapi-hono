@@ -4,9 +4,9 @@
   "type": "module",
   "packageManager": "pnpm@10.28.0",
   "scripts": {
-    "start1": "tsx main1.ts",
-    "start2": "tsx main2.ts",
-    "compare": "tsx scripts/compare.ts",
+    "start1": "tsx src/app1/server.ts",
+    "start2": "tsx src/app2/server.ts",
+    "compare": "bash scripts/compare.sh",
     "fmt": "biome check --write .",
     "fmt:check": "biome check .",
     "lint": "biome lint ."

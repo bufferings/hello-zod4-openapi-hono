@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    fmt:
+      glob: "*.{ts,tsx,js,jsx,json,md}"
+      run: pnpm exec biome check --write {staged_files}
+      stage_fixed: true
+    lint:
+      run: pnpm exec biome lint

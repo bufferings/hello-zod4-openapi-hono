@@ -71,6 +71,7 @@ Both approaches result in the same OpenAPI document.
 
 ## Stack
 
+- Tool Version Manager: [mise](https://mise.jdx.dev/)
 - Runtime: [Node.js](https://nodejs.org/) v22
 - Package Manager: [pnpm](https://pnpm.io/)
 - Framework: [Hono](https://hono.dev/)
@@ -78,3 +79,4 @@ Both approaches result in the same OpenAPI document.
 - OpenAPI: [@hono/zod-openapi](https://github.com/honojs/middleware/tree/main/packages/zod-openapi)
 - Result Type: [@praha/byethrow](https://github.com/praha-inc/byethrow)
 - Formatter/Linter: [Biome](https://biomejs.dev/)
+- Git Hooks: [Lefthook](https://github.com/evilmartians/lefthook)

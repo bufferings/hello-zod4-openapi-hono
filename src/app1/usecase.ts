@@ -1,4 +1,5 @@
 import { z } from "@hono/zod-openapi";
+import { R } from "@praha/byethrow";
 
 export const CreateUserInput = z
   .object({
@@ -9,7 +10,7 @@ export const CreateUserInput = z
       example: 42,
     }),
   })
-  .openapi("CreateUserInput");
+  .openapi({ description: "Create user input" });
 
 export const CreateUserOutput = z
   .object({
@@ -26,4 +27,23 @@ export const CreateUserOutput = z
       example: "2024-01-01T00:00:00Z",
     }),
   })
-  .openapi("CreateUserOutput");
+  .openapi({ description: "Create user output" });
+
+export const createUser = (input: unknown) => {
+  const parseResult = R.parse(CreateUserInput, input);
+
+  if (R.isFailure(parseResult)) {
+    return parseResult;
+  }
+
+  const data = parseResult.value;
+
+  const user = {
+    id: "123",
+    name: data.name,
+    age: data.age,
+    createdAt: new Date().toISOString(),
+  };
+
+  return R.parse(CreateUserOutput, user);
+};

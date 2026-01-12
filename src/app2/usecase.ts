@@ -1,3 +1,4 @@
+import { R } from "@praha/byethrow";
 import { z } from "zod";
 
 export const CreateUserInput = z
@@ -10,7 +11,7 @@ export const CreateUserInput = z
     }),
   })
   .meta({
-    id: "CreateUserInput",
+    description: "Create user input",
   });
 
 export const CreateUserOutput = z
@@ -29,5 +30,24 @@ export const CreateUserOutput = z
     }),
   })
   .meta({
-    id: "CreateUserOutput",
+    description: "Create user output",
   });
+
+export const createUser = (input: unknown) => {
+  const parseResult = R.parse(CreateUserInput, input);
+
+  if (R.isFailure(parseResult)) {
+    return parseResult;
+  }
+
+  const data = parseResult.value;
+
+  const user = {
+    id: "123",
+    name: data.name,
+    age: data.age,
+    createdAt: new Date().toISOString(),
+  };
+
+  return R.parse(CreateUserOutput, user);
+};

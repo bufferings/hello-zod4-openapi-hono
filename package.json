@@ -14,6 +14,7 @@
   "dependencies": {
     "@hono/node-server": "^1.19.8",
     "@hono/zod-openapi": "^1.2.0",
+    "@praha/byethrow": "^0.9.0",
     "hono": "^4.11.3",
     "zod": "^4.3.5"
   },
